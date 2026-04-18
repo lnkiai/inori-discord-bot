@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: inori-discord-bot
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python bot.py
+    envVars:
+      - key: DISCORD_TOKEN
+        sync: false
+      - key: API_SECRET
+        sync: false
+      - key: API_BASE_URL
+        value: https://dify-docs-search.lnkiai.workers.dev
+      - key: PORT
+        value: "10000"
